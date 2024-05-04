@@ -9,6 +9,12 @@ In this assignment, you'll build a RESTful API for a task management application
 - Manage environment variables with dotenv.
 - Implement CRUD operations.
 
+## Prerequisites
+- **Node.js and npm**: Download and install from [Node.js official website](https://nodejs.org/).
+- **Postman or Insomnia**: API testing tools.
+  - Postman: [Download and Install](https://www.postman.com/downloads/)
+  - Insomnia: [Download and Install](https://insomnia.rest/download)
+
 ## Requirements
 
 ### 1. Setup and Configuration
@@ -38,7 +44,43 @@ In this assignment, you'll build a RESTful API for a task management application
      - Replace `<username>` and `<password>` with your MongoDB Atlas credentials.
      - `PORT` is the port number where the server will run.
 
-### 2. Database Setup
+### 2. Setting Up MongoDB
+
+1. **Create a MongoDB Atlas Account**
+   - Go to [MongoDB Atlas](https://www.mongodb.com/cloud/atlas/register) and sign up.
+   - Follow the on-screen instructions to complete your registration.
+   
+   ![MongoDB Signup Page](image_link_1)  <!-- Replace image_link_1 with the actual image URL -->
+   
+2. **Set Up a New Project**
+   - Click on **Projects** in the sidebar.
+   - Click **New Project** to create a new project.
+   - Give your project a name and click **Next**.
+
+   ![MongoDB Projects Page](image_link_2)  <!-- Replace image_link_2 with the actual image URL -->
+
+3. **Configure IP Whitelisting and Database Access**
+   - In the **Database Access** tab, click **Add New Database User**.
+   - Fill in the username and password, then click **Add User**.
+   - In the **Network Access** tab, click **Add IP Address** and select **Allow Access from Anywhere**.
+
+   ![Database Access](image_link_3)  <!-- Replace image_link_3 with the actual image URL -->
+   
+4. **Create a New MongoDB Cluster**
+   - Click on **Build a Cluster**.
+   - Choose the free **M0 Sandbox** cluster.
+   - Click **Create Cluster**.
+
+   ![Build a Cluster](image_link_4)  <!-- Replace image_link_4 with the actual image URL -->
+
+5. **Connect to MongoDB**
+   - Click **Connect** on your new cluster.
+   - Choose **Connect your application**.
+   - Copy the connection string and replace `<username>` and `<password>` with the credentials you set in step 3.
+
+   ![Connect to MongoDB](image_link_5)  <!-- Replace image_link_5 with the actual image URL -->
+
+### 3. Database Setup
 1. **Connect to MongoDB**
    - Create a `db.js` file to manage MongoDB connection:
      ```javascript
@@ -71,7 +113,7 @@ In this assignment, you'll build a RESTful API for a task management application
      module.exports = mongoose.model('Task', taskSchema);
      ```
 
-### 3. API Endpoints
+### 4. API Endpoints
 1. **Implement Endpoints**
    - Create `app.js`:
      ```javascript
@@ -149,11 +191,11 @@ In this assignment, you'll build a RESTful API for a task management application
      app.listen(port, () => console.log(`Server running on http://localhost:${port}`));
      ```
 
-### 4. Testing
+### 5. Testing
 **1. Manually Test the API**
 - Use Postman or another API testing tool to verify the functionality of the endpoints.
 
-### 5. Submission Guidelines
+### 6. Submission Guidelines
 **1. Push Code to GitHub**
 - Create a new GitHub repository and push the project.
 
